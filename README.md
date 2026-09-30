@@ -25,8 +25,11 @@
 构建命令 `npm run build`、输出目录 `dist`，无需任何配置）。
 
 构建命令:npm run build
+
 构建输出:dist
+
 根目录:
+
 构建注释:已启用
 
 ### GitHub Pages（本仓库已内置自动部署）
