@@ -2,7 +2,7 @@
 
 > 一个搜索框，搜遍全网网盘资源 —— 即搜即得、聚合去重、轻量部署
 
-**在线体验**：<https://panhub.shenzjd.com>
+**在线体验**：<https://zhixiaotx.github.io/panhub>
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwu529778790%2Fpanhub.shenzjd.com)
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fzhixiaotx%2Fpanhub)
