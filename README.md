@@ -24,13 +24,13 @@
 授权 GitHub 仓库后一路下一步即可（两平台都会自动识别 Vite 工程：
 构建命令 `npm run build`、输出目录 `dist`，无需任何配置）。
 
-构建命令:npm run build
+**构建命令:npm run build**
 
-构建输出:dist
+**构建输出:dist**
 
-根目录:
+**根目录:**
 
-构建注释:已启用
+**构建注释:已启用**
 
 ### GitHub Pages（本仓库已内置自动部署）
 
