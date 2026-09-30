@@ -22,161 +22,186 @@
     </script>
     <style>
         /* ===== 顶部导航栏样式 ===== */
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        html,
+html,
         body {
-            margin: 0;
-            padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+}
 
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 60px;
-            padding: 0 32px;
-            background: #ffffff;
-            border-bottom: 1px solid #f0f0f0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 32px;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                 "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
                 "Microsoft YaHei", sans-serif;
-        }
+}
 
-        .dark .site-header {
-            background: #1a1a1a;
-            border-bottom: 1px solid #2a2a2a;
-        }
+.dark .site-header {
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+}
 
         /* 品牌区域 */
-        .site-brand {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #111111;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            flex-shrink: 0;
-        }
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    z-index: 2;
+}
 
-        .dark .site-brand {
-            color: #f0f0f0;
-        }
+.dark .site-brand {
+    color: #f0f0f0;
+}
 
-        .site-brand img {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+.site-brand img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-        /* 右侧导航区 */
-        .site-nav {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            height: 100%;
-        }
+        /* 导航区：绝对定位居中 */
+.site-nav {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 1;
+}
 
-        .site-nav a.nav-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 14px;
-            color: #333333;
-            text-decoration: none;
-            transition: color 0.2s;
-            white-space: nowrap;
-        }
+.site-nav a.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
 
-        .dark .site-nav a.nav-link {
-            color: #cccccc;
-        }
+.dark .site-nav a.nav-link {
+    color: #cccccc;
+}
 
-        .site-nav a.nav-link:hover {
-            color: #1a6dff;
-        }
+.site-nav a.nav-link:hover {
+    color: #1a6dff;
+}
 
         /* 图标样式 */
-        .site-nav a.nav-link .nav-icon {
-            font-size: 15px;
-            line-height: 1;
-            display: inline-block;
-            transform: translateY(-1px);
-        }
+.site-nav a.nav-link .nav-icon {
+    font-size: 15px;
+    line-height: 1;
+    display: inline-block;
+    transform: translateY(-1px);
+}
 
-        /* 登录按钮 */
-        .site-login {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 32px;
-            padding: 0 16px;
-            font-size: 14px;
-            color: #1a6dff;
-            background: transparent;
-            border: 1px solid #1a6dff;
-            border-radius: 999px;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-            white-space: nowrap;
-            line-height: 1;
-        }
+        /* 登录按钮：固定在右侧 */
+.site-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #1a6dff;
+    background: transparent;
+    border: 1px solid #1a6dff;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    line-height: 1;
+    flex-shrink: 0;
+    z-index: 2;
+}
 
-        .site-login:hover {
-            background: #1a6dff;
-            color: #ffffff;
-        }
+.site-login:hover {
+    background: #1a6dff;
+    color: #ffffff;
+}
 
-        /* 移动端 */
-        @media (max-width: 768px) {
-            .site-header {
-                padding: 0 16px;
-                height: 56px;
-            }
+        /* 移动端：取消绝对定位居中，改为普通流式排列 */
+@media (max-width: 900px) {
+    .site-header {
+        padding: 0 16px;
+        height: 56px;
+        justify-content: space-between;
+    }
 
-            .site-brand {
-                font-size: 16px;
-            }
+    .site-brand {
+        font-size: 16px;
+    }
 
-            .site-brand img {
-                width: 24px;
-                height: 24px;
-            }
+    .site-brand img {
+        width: 24px;
+        height: 24px;
+    }
 
-            .site-nav {
-                gap: 14px;
-            }
+    .site-nav {
+        position: static;
+        transform: none;
+        height: auto;
+        gap: 14px;
+                /* 移动端链接过多，可以隐藏一部分，或横向滚动 */
+        overflow-x: auto;
+        flex: 1;
+        justify-content: flex-start;
+        margin: 0 12px;
+        scrollbar-width: none;
+ /* Firefox */
+    }
 
-            .site-nav a.nav-link {
-                font-size: 13px;
-            }
+    .site-nav::-webkit-scrollbar {
+        display: none;
+ /* Chrome/Safari */
+    }
 
-            .site-login {
-                height: 28px;
-                padding: 0 12px;
-                font-size: 13px;
-            }
-        }
+    .site-nav a.nav-link {
+        font-size: 13px;
+    }
 
-        /* 超小屏隐藏部分链接 */
-        @media (max-width: 480px) {
-            .site-nav a.nav-link {
-                display: none;
-            }
+    .site-login {
+        height: 28px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+}
 
-            .site-nav a.nav-link:first-child,
-            .site-nav a.nav-link:nth-child(2) {
-                display: inline-flex;
-            }
-        }
+        /* 小屏隐藏一些非核心链接，只保留前几个，避免过于拥挤 */
+@media (max-width: 600px) {
+    .site-nav a.nav-link {
+        display: none;
+    }
+
+    .site-nav a.nav-link:nth-child(1),
+            .site-nav a.nav-link:nth-child(2),
+            .site-nav a.nav-link:nth-child(3) {
+        display: inline-flex;
+    }
+}
     </style>
 </head>
 
@@ -185,34 +210,19 @@
     <header class="site-header">
         <!-- 左侧品牌 -->
         <a class="site-brand" href="/">
-            <img src="./icons/logo0.svg" alt="logo" />
-            <span>Sky</span>
+            <img src="./icons/logo0.svg" alt="logo" /> <span>Sky</span>
         </a>
-        <!-- 右侧导航 -->
+        <!-- 中间导航（绝对居中） -->
         <nav class="site-nav">
-            <a class="nav-link" href="https://oiio-nav.pages.dev/" target="_blank" rel="noopener">
-                <span class="nav-icon">🧭</span>oiio-nav
-            </a>
-            <a class="nav-link" href="https://psonline.rainsky.cc.cd" target="_blank" rel="noopener">
-                <span class="nav-icon">🖌️</span>在线PS
-            </a>
-            <a class="nav-link" href="https://bing.rainsky.cc.cd" target="_blank" rel="noopener">
-                <span class="nav-icon">🖼️</span>必应壁纸
-            </a>
-            <a class="nav-link" href="https://md.rainsky.cc.cd" target="_blank" rel="noopener">
-                <span class="nav-icon">📝</span>Markdown 编辑器
-            </a>
-            <a class="nav-link" href="https://imgbed.stimi.cc.cd/" target="_blank" rel="noopener">
-                <span class="nav-icon">🗂️</span>Git图床
-            </a>
-            <a class="nav-link" href="https://skyblog-dju.pages.dev/" target="_blank" rel="noopener">
-                <span class="nav-icon">✍️</span>博客
-            </a>
-            <a class="nav-link" href="https://html2links.rainsky.cc.cd/" target="_blank" rel="noopener">
-                <span class="nav-icon">🌐</span>Html渲染器
-            </a>
-            <a class="site-login" href="#">登录</a>
+            <a class="nav-link" href="https://oiio-nav.pages.dev/" target="_blank" rel="noopener"> <span class="nav-icon">🧭</span>oiio-nav</a>
+            <a class="nav-link" href="https://psonline.rainsky.cc.cd" target="_blank" rel="noopener"> <span class="nav-icon">🖌️</span>在线PS</a>
+            <a class="nav-link" href="https://bing.rainsky.cc.cd" target="_blank" rel="noopener"> <span class="nav-icon">🖼️</span>必应壁纸</a>
+            <a class="nav-link" href="https://md.rainsky.cc.cd" target="_blank" rel="noopener"> <span class="nav-icon">📝</span>Markdown 编辑器</a>
+            <a class="nav-link" href="https://imgbed.stimi.cc.cd/" target="_blank" rel="noopener"> <span class="nav-icon">🗂️</span>Git图床</a>
+            <a class="nav-link" href="https://skyblog-dju.pages.dev/" target="_blank" rel="noopener"> <span class="nav-icon">✍️</span>博客</a>
+            <a class="nav-link" href="https://html2links.rainsky.cc.cd/" target="_blank" rel="noopener"> <span class="nav-icon">🌐</span>Html渲染器</a>
         </nav>
+        <!-- 右侧登录按钮 --> <a class="site-login" href="#">登录</a>
     </header>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
